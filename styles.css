@@ -1,0 +1,90 @@
+:root {
+    --dark: #1b1b1b;
+    --green: #38CCAE;
+    --border-width: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark);
+    color: #fff;
+    font-family: Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    padding: 24px 12px;
+}
+
+a {
+    color: #fff;
+}
+
+.img-container {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.img-container:before {
+    content: "";
+    display: block;
+    width: 150%;
+    height: 150%;
+    position: relative;
+    left: -25%;
+    top: -25%;
+    background: conic-gradient(
+        var(--green), 
+        #fff,
+        var(--green), 
+        #fff,
+        var(--green), 
+        #fff, 
+        var(--green),
+        #fff,
+        var(--green)
+    );
+    background-position: center;
+    animation: rotate 3s infinite linear;
+}
+
+img {
+    position: absolute;
+    width: calc(100% - 2*var(--border-width));
+    height: calc(100% - 2*var(--border-width));
+    top: var(--border-width);
+    left: var(--border-width);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+article {
+    margin: 20px 0;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+li {
+    margin: 12px 0;
+}
+
+@keyframes rotate {
+    to {transform: rotate(360deg)}
+}
